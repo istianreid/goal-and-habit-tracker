@@ -1,0 +1,52 @@
+
+ 
+
+### ADMIN & USER-----------------------------------------------------
+
+### Both can add a vision board ##
+
+POST http://localhost:8080/api/v1/visionBoard
+Content-Type: application/json
+authorization: Bearer #
+
+
+{
+    "title": "My Vision",
+    "description": "Vision description",
+    "image": "",
+    "date": "01-27-2025"
+}
+
+
+### Get list of vision boards of either the admin or the user
+
+GET http://localhost:8080/api/v1/visionBoard
+Content-Type: application/json
+authorization: Bearer #
+
+
+### View their visionBoard individually ##
+
+GET http://localhost:8080/api/v1/visionBoard/#
+Content-Type: application/json
+authorization: Bearer #
+
+
+### Both can edit their visionBoard
+
+PUT http://localhost:8080/api/v1/visionBoard/#
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "title": "Me as a front-end developer at Cebu Pacific"
+}
+
+
+### Both can delete one of their listed visionBoard
+
+DELETE http://localhost:8080/api/v1/visionBoard/#
+Content-Type: application/json
+authorization: Bearer #
+
+

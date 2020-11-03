@@ -1,0 +1,80 @@
+
+
+### ADMIN -----------------------------------------------------------
+
+### Admin is the only one authorized to add categories ##
+ 
+POST http://localhost:8080/api/v1/category/add
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "name": "Career",
+    "description": "Category description",
+    "image": ""
+}
+
+
+### Admin can view all categories ##
+
+GET http://localhost:8080/api/v1/category/categories
+Content-Type: application/json
+authorization: Bearer #
+
+
+### Admin can edit a category ##
+
+PUT http://localhost:8080/api/v1/category/5f9ffa99429494184c3e17dd
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "name": "Family"
+}
+
+
+### Admin can delete a category ##
+
+DELETE http://localhost:8080/api/v1/category/5f9ffaa1429494184c3e17de
+Content-Type: application/json
+authorization: Bearer #
+ 
+
+
+
+### USERS -----------------------------------------------------------
+
+### User can't add a category / forbidden
+
+POST http://localhost:8080/api/v1/category/add
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "name": "CAT 2",
+    "description": "Cat 2 description"
+}
+
+
+### User can view list of categories
+
+GET http://localhost:8080/api/v1/category/categories
+Content-Type: application/json
+authorization: Bearer #
+
+
+### User can't edit a category / forbidden
+
+PUT http://localhost:8080/api/v1/category/#
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "name": "CATEEEEEGORY"
+}
+
+
+### User can't delete a category / forbidden
+
+DELETE http://localhost:8080/api/v1/category/#
+authorization: Bearer #

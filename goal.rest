@@ -1,0 +1,54 @@
+
+ 
+
+### ADMIN & USER-----------------------------------------------------
+
+### Both can add a goal ##
+
+POST http://localhost:8080/api/v1/goal
+Content-Type: application/json
+authorization: Bearer #
+
+
+{
+    "title": "User Goal #1",
+    "description": "Goal Description",
+    "image": "",
+    "start_date": "10-30-2020", 
+    "end_date": "11-11-2020",
+    "status": "Pending",
+    "categoryId": ""
+}
+
+
+### Get list of goals of either the admin or the user
+
+GET http://localhost:8080/api/v1/goal
+Content-Type: application/json
+authorization: Bearer #
+
+
+### View their goal individually ##
+
+GET http://localhost:8080/api/v1/goal/#
+Content-Type: application/json
+authorization: Bearer #
+
+
+### Both can edit their goal
+
+PUT http://localhost:8080/api/v1/goal/#
+Content-Type: application/json
+authorization: Bearer #
+
+{
+    "status": "Complete"
+}
+
+
+### Both can delete one of their listed goals
+
+DELETE http://localhost:8080/api/v1/goal/#
+Content-Type: application/json
+authorization: Bearer #
+
